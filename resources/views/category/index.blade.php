@@ -4,8 +4,21 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            @if(Session::get('message'))
+            <div class="alert alert-sucess">
+                {{Session::get('message')}}
+            </div>
+            @endif
             <div class="card">
-                <div class="card-header">All Categories</div>
+                <div class="card-header">All Categories
+                    <span class="float-right">
+                        <a href="{{route('category.create')}}">
+                            <button class="btn btn-outline-secondary">Add Category</button>
+                        </a>
+                    </span>
+
+
+                </div>
                     <div class="card-body">
 
                     <table class="table">

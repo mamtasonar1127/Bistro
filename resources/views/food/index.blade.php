@@ -4,9 +4,20 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            @if(Session::get('message'))
+            <div class="alert alert-sucess">
+                {{Session::get('message')}}
+            </div>
+            @endif
             <div class="card">
-                <div class="card-header">All Food</div>
-                    <div class="card-body">
+                <div class="card-header">All Food
+                    <span class="float-right">
+                        <a href="{{route('food.create')}}">
+                            <button class="btn btn-outline-secondary">Add Food</button>
+                        </a>
+                    </span>
+                </div>
+                <div class="card-body">
 
                     <table class="table">
                         <thead class="thead-dark">
